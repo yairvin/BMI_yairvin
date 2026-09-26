@@ -29,7 +29,6 @@ public class LoginServlet extends HttpServlet {
         out.println("  <meta charset='UTF-8'>");
         out.println("  <title>התחברות</title>");
         out.println("  <style>");
-        // הוספת העיצוב האחיד: רקע תכול, פונט, ומרכוז
         out.println("    body { background-color: #f0f8ff; font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }");
         out.println("    h2 { color: blue; font-size: 26px; }");
         out.println("    .calculator-img { width: 70px; height: auto; margin-bottom: 10px; }");
@@ -40,7 +39,6 @@ public class LoginServlet extends HttpServlet {
         out.println("</head>");
         out.println("<body>");
 
-        // תמונת המחשבון האחידה
         out.println("    <img src='https://cdn.supercoloring.com/coloring/2078557/calculator-coloring-page-sm.webp' alt='מחשבון' class='calculator-img'>");
         out.println("  <h2>התחברות למערכת</h2>");
         out.println("  <form action='login' method='POST'>");
