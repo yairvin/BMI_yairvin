@@ -15,6 +15,7 @@
     </style>
 </head>
 <body>
+
     <div class="topbar">
         <span>Welcome, <%= session.getAttribute("username") %> (<%= session.getAttribute("role") %>)</span>
         <a href="${pageContext.request.contextPath}/logout">Log out</a>

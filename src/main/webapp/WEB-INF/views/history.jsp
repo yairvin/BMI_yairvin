@@ -18,6 +18,7 @@
     </style>
 </head>
 <body>
+
     <div class="topbar">
         <span>Welcome, <%= session.getAttribute("username") %> (admin)</span>
         <span>

@@ -25,15 +25,30 @@ public class LoginServlet extends HttpServlet {
 
         out.println("<!DOCTYPE html>");
         out.println("<html dir='rtl' lang='he'>");
-        out.println("<head><meta charset='UTF-8'><title>התחברות</title></head>");
+        out.println("<head>");
+        out.println("  <meta charset='UTF-8'>");
+        out.println("  <title>התחברות</title>");
+        out.println("  <style>");
+        // הוספת העיצוב האחיד: רקע תכול, פונט, ומרכוז
+        out.println("    body { background-color: #f0f8ff; font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }");
+        out.println("    h2 { color: blue; font-size: 26px; }");
+        out.println("    .calculator-img { width: 70px; height: auto; margin-bottom: 10px; }");
+        out.println("    button, a { background-color: #007bff; color: white; padding: 8px 15px; text-decoration: none; border: none; border-radius: 4px; font-family: Arial; font-size: 14px; cursor: pointer; display: inline-block; margin: 5px; }");
+        out.println("    button:hover, a:hover { background-color: #0056b3; }");
+        out.println("    input[type='text'], input[type='password'] { padding: 6px; margin: 5px; border: 1px solid #ccc; border-radius: 4px; }");
+        out.println("  </style>");
+        out.println("</head>");
         out.println("<body>");
-        out.println("<h2>התחברות למערכת</h2>");
-        out.println("<form action='login' method='POST'>");
-        out.println("שם משתמש: <input type='text' name='username' required><br><br>");
-        out.println("סיסמה: <input type='password' name='password' required><br><br>");
-        out.println("<button type='submit'>התחבר</button>");
-        out.println("</form>");
-        out.println("<p>אין לך חשבון? <a href='register'>הירשם כאן</a></p>");
+
+        // תמונת המחשבון האחידה
+        out.println("    <img src='https://cdn.supercoloring.com/coloring/2078557/calculator-coloring-page-sm.webp' alt='מחשבון' class='calculator-img'>");
+        out.println("  <h2>התחברות למערכת</h2>");
+        out.println("  <form action='login' method='POST'>");
+        out.println("    שם משתמש: <input type='text' name='username' required><br><br>");
+        out.println("    סיסמה: <input type='password' name='password' required><br><br>");
+        out.println("    <button type='submit'>התחבר</button>");
+        out.println("  </form>");
+        out.println("  <p>אין לך חשבון? <a href='register'>הירשם כאן</a></p>");
         out.println("</body></html>");
     }
 
@@ -57,10 +72,20 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("user", username);
                 response.sendRedirect("bmi");
             } else {
-                response.setContentType("text/html; dir='rtl' ;charset=UTF-8");
+                response.setContentType("text/html; charset=UTF-8");
                 PrintWriter out = response.getWriter();
+                out.println("<!DOCTYPE html>");
                 out.println("<html dir='rtl' lang='he'>");
-                out.println("<h3 style='color:red;'>שם משתמש או סיסמה שגויים. <a href='login'>נסה שוב</a></h3>");
+                out.println("<head><meta charset='UTF-8'><title>שגיאת התחברות</title>");
+                out.println("<style>");
+                out.println("  body { background-color: #f0f8ff; font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }");
+                out.println("  a { background-color: #007bff; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block; margin-top: 10px; }");
+                out.println("</style>");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("  <h3 style='color:red;'>שם משתמש או סיסמה שגויים.</h3>");
+                out.println("  <a href='login'>נסה שוב</a>");
+                out.println("</body></html>");
             }
 
         } catch (SQLException e) {

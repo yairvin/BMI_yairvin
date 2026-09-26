@@ -1,4 +1,4 @@
-package com.name.app;
+        package com.name.app;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,19 +36,27 @@ public class BmiCalculatorServlet extends HttpServlet {
         out.println("    <meta charset='UTF-8'>");
         out.println("    <title>מחשבון BMI</title>");
         out.println("    <style>");
-        out.println("      body { font-family: Arial, sans-serif; margin: 40px; }");
+        // כאן הוכנס העיצוב האחיד (רקע תכול, פונט ומרכוז)
+        out.println("      body { background-color: #f0f8ff; font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }");
+        out.println("      h1 { font-size: 32px; color: blue; }");
+        out.println("      h2 { font-size: 18px; color: blue; }");
+        out.println("      .calculator-img { width: 70px; height: auto; margin-bottom: 10px; }");
         out.println("      .form-group { margin-bottom: 15px; }");
-        out.println("      label { display: inline-block; width: 100px; }");
-        out.println("      .result { margin-top: 20px; padding: 15px; border: 1px solid #ccc; width: 300px; }");
+        out.println("      .result { margin: 20px auto; padding: 15px; border: 1px solid #ccc; width: 300px; background-color: white; border-radius: 6px; }");
+        out.println("      a, button { background-color: #007bff; color: white; padding: 8px 15px; text-decoration: none; border: none; border-radius: 4px; font-family: Arial; font-size: 14px; cursor: pointer; margin: 5px; display: inline-block; }");
+        out.println("      a:hover, button:hover { background-color: #0056b3; }");
+        out.println("      input[type='number'] { padding: 6px; margin: 5px; border: 1px solid #ccc; border-radius: 4px; }");
         out.println("    </style>");
         out.println("  </head>");
         out.println("  <body>");
+
+        // הוספת תמונת המחשבון בראש העמוד
+        out.println("    <img src='https://cdn.supercoloring.com/coloring/2078557/calculator-coloring-page-sm.webp' alt='מחשבון' class='calculator-img'>");
         out.println("    <h1>מחשבון BMI</h1>");
 
-
         out.println("    <div style='margin-bottom: 20px;'>");
-        out.println("      <a href='bmi' style='margin-left: 15px;'>מחשבון BMI</a>");
-        out.println("      <a href='weight-average' style='margin-left: 15px;'>ממוצע משקל</a>");
+        out.println("      <a href='bmi'>מחשבון BMI</a>");
+        out.println("      <a href='weight-average'>ממוצע משקל</a>");
         out.println("      <a href='bmi-average'>ממוצע BMI</a>");
         out.println("    </div>");
 
@@ -108,3 +116,6 @@ public class BmiCalculatorServlet extends HttpServlet {
         out.println("</html>");
     }
 }
+
+
+
