@@ -68,7 +68,7 @@ public class WeightAverageServlet extends HttpServlet {
 
         out.println("    <h1>ממוצע המשקל במערכת</h1>");
         out.println("    <div class='result-box'>");
-        out.println("      <p>ממוצע המשקל של כלל המשתמשים הוא: <strong>" + String.format("%.2f", avgWeight) + " ק\"ג</strong></p>");
+        out.println("      <p style=\"text-align: center;\">ממוצע המשקל במערכת: <strong>" + String.format("%.2f", avgWeight) + "&nbsp;ק\"ג</strong></p>");
         out.println("    </div>");
         out.println("</body></html>");
     }

@@ -68,7 +68,7 @@ public class BmiAverageServlet extends HttpServlet {
         out.println("    </div>");
         out.println("    <h1>ממוצע ה-BMI במערכת</h1>");
         out.println("    <div class='result-box'>");
-        out.println("      <p>ממוצע ה-BMI של כלל המשתמשים הוא: <strong>" + String.format("%.2f", avgBmi) + "</strong></p>");
+        out.println("      <p style=\"white-space: nowrap;\">ממוצע ה-BMI של כלל המשתמשים הוא: <strong>" + String.format("%.2f", avgBmi) + "</strong></p>");
         out.println("    </div>");
         out.println("</body></html>");
     }
